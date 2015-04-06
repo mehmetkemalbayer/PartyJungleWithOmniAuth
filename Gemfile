@@ -3,18 +3,20 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use postgresql as the database for Active Record
+gem 'pg'
 
 # Use devise
 gem 'therubyracer', :platform => :ruby
 gem 'devise'
-
+gem 'devise-i18n'
+gem 'devise-i18n-views'
 # Use OmniAuth
 gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2', '~> 0.2.1'
 gem 'omniauth-twitter'
+gem 'omniauth-linkedin-oauth2'
 
 # Use bootstrap
 gem 'bootstrap-sass', '~> 3.2.0'
@@ -57,4 +59,4 @@ end
 # gem 'capistrano', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+#gem 'debugger', group: [:development, :test]
