@@ -11,6 +11,7 @@ gem 'therubyracer', :platform => :ruby
 gem 'devise'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
+
 # Use OmniAuth
 gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-facebook'

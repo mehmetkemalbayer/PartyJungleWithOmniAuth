@@ -1,0 +1,4 @@
+da:
+  devise:
+    confirmations:
+      confirmed: "Eposta adresiniz başırılı bir şekilde onaylandı."

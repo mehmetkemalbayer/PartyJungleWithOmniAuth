@@ -2,12 +2,43 @@
 <html>
 <head>
   <title>PartyJungleWithOmniAuth</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		  	<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+		  	<span class="icon-bar"></span>
+		  	<span class="icon-bar"></span>
+		  </button>
+		  <a class="navbar-brand" href="#">Project name</a>
+			</div>
+			
+			<div id="navbar" class="navbar-collapse collapse">
+				
+					<%= form_for(resource, :html => {:class => 'navbar-form navbar-right'}, as: resource_name, url: session_path(resource_name)) do |f| %>
+					  <% unless user_signed_in? %>
+						  <div class="form-group"><%= f.email_field :email, autofocus: true, :class=>'form-control', :placeholder=>'Email address', :required => true %></div>
+			  		  <div class="form-group"><%= f.password_field :password, autocomplete: "off", :class=>'form-control', :required => true, :placeholder=>'Password' %></div>
+			  		  <%= f.submit "Log in", :class=>"btn btn-success" %>
+						  <%= render "devise/shared/links" %>
+					  <% end %>
+						<% if user_signed_in? %>
+							<div class="form-group"><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class=>'form-control btn btn-default' %></div>
+						<% end %>
+				  <% end %>
 
+			</div><!--/.navbar-collapse -->
+				
+
+		  </div>
+	</div>
+</nav>
 <%= yield %>
 
 </body>
